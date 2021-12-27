@@ -1,12 +1,12 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import perks from './modules/perks';
+import survivors from './modules/survivors';
+import killers from './modules/killers';
 
 export default createStore({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
   modules: {
+    perks,
+    survivors,
+    killers
   }
 })

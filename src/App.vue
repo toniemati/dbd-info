@@ -1,30 +1,36 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <Nav />
+
+  <router-view />
 </template>
 
+<script setup>
+import Nav from './components/Nav.vue';
+import { useStore } from 'vuex';
+
+const store = useStore();
+
+store.dispatch('setPerks');
+store.dispatch('setSurvivors');
+store.dispatch('setKillers');
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url('https://1920x1080hdwallpapers.com/image/201602/abstract/4797/surface-pink-shine-dark-sky.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
 }
 </style>
