@@ -1,5 +1,5 @@
 module.exports = {
   devServer: {
-    proxy: 'https://dbd-api.herokuapp.com/'
+    proxy: 'https://dbd-api.herokuapp.com/',
   }
 }
