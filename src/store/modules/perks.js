@@ -5,7 +5,8 @@ export default {
     perks: []
   },
   getters: {
-    getPerks: (state) => state.perks
+    getPerks: (state) => state.perks,
+    getPerkByName: (state) => (payload) => state.perks.find(({ perk_name }) => perk_name.toLowerCase() === payload)
   },
   actions: {
     setPerks: async ({ commit }) => {

@@ -1,9 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import Perks from '../views/Perks.vue'
-import Survivors from '../views/Survivors.vue'
-import Killers from '../views/Killers.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import Home from '../views/Home.vue';
+import About from '../views/About.vue';
+import Perks from '../views/Perks.vue';
+import PerkDetails from '../views/PerkDetails.vue';
+import Survivors from '../views/Survivors.vue';
+import Killers from '../views/Killers.vue';
 
 const routes = [
   {
@@ -20,6 +21,11 @@ const routes = [
     path: '/perks',
     name: 'Perks',
     component: Perks
+  },
+  {
+    path: '/perks/:name',
+    name: 'PerkDetails',
+    component: PerkDetails
   },
   {
     path: '/survivors',

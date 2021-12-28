@@ -25,7 +25,6 @@
   background: hsl(0, 0%, 5%);
 
   padding: 1rem;
-  margin-bottom: 1rem;
 }
 
 .nav a {

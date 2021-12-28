@@ -26,7 +26,6 @@ store.dispatch('setKillers');
 }
 
 body {
-  width: 100vw;
   min-height: 100vh;
 
   font-family: 'Montserrat', sans-serif;
