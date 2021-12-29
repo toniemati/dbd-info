@@ -38,4 +38,26 @@ body {
 
   color: #efefef;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #00000055;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #efefef;
+  cursor: pointer;
+  border-radius: 3rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
 </style>

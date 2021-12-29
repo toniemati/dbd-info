@@ -37,7 +37,7 @@
     </div>
 
     <div class="perkDetails__noFinded" v-else>
-      <h1>no such a perk finded</h1>
+      <h1>no such a perk found</h1>
     </div>
   </div>
 </template>
@@ -50,9 +50,7 @@ import { computed, watch } from 'vue';
 const route = useRoute();
 const store = useStore();
 
-const perk = computed(() => store.getters.getPerkByName(route.params.name))
-
-watch(perk, (curr, prev) => console.table(curr));
+const perk = computed(() => store.getters.getPerkByName(route.params.name));
 </script>
 
 <style scoped>

@@ -4,6 +4,7 @@ import About from '../views/About.vue';
 import Perks from '../views/Perks.vue';
 import PerkDetails from '../views/PerkDetails.vue';
 import Survivors from '../views/Survivors.vue';
+import SurvivorDetails from '../views/SurvivorDetails.vue';
 import Killers from '../views/Killers.vue';
 
 const routes = [
@@ -31,6 +32,11 @@ const routes = [
     path: '/survivors',
     name: 'Survivors',
     component: Survivors
+  },
+  {
+    path: '/survivors/:name',
+    name: 'SurvivorDetails',
+    component: SurvivorDetails
   },
   {
     path: '/killers',

@@ -6,7 +6,7 @@ export default {
   },
   getters: {
     getPerks: (state) => state.perks,
-    getPerkByName: (state) => (payload) => state.perks.find(({ perk_name }) => perk_name.toLowerCase() === payload)
+    getPerkByName: (state) => (payload) => state.perks.find(({ perk_name }) => perk_name.toLowerCase().replace(/\s|&/gi, '') === payload)
   },
   actions: {
     setPerks: async ({ commit }) => {

@@ -1,5 +1,5 @@
 <template>
-  <div @click="handleClick" class="perkListItem">
+  <div @click="handleClick" class="survivorListItem">
     <img :src="img" />
     <p>{{ name }}</p>
   </div>
@@ -12,8 +12,8 @@ const router = useRouter();
 const { name, img } = defineProps({ name: String, img: String });
 
 const handleClick = () => {
-  router.push({ name: 'PerkDetails', params: {
-      name: name.toLowerCase().replace(/\s|&/gi, '')
+  router.push({ name: 'SurvivorDetails', params: {
+      name: name.toLowerCase().replace(/\s/gi, '')
     }
   });
 }
@@ -21,11 +21,13 @@ const handleClick = () => {
 </script>
 
 <style scoped>
-.perkListItem {
+.survivorListItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  gap: 1rem;
 
   cursor: pointer;
   padding: 11%;
@@ -33,15 +35,15 @@ const handleClick = () => {
   transition: all 0.3s ease-in-out;
 }
 
-.perkListItem:hover {
+.survivorListItem:hover {
   border: 1px solid #efefef;
 }
 
-.perkListItem img {
+.survivorListItem img {
   width: 100%;
 }
 
-.perkListItem p {
+.survivorListItem p {
   text-align: center;
 }
 </style>
