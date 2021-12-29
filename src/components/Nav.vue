@@ -36,6 +36,10 @@
   transition: all 200ms ease-in-out;
 }
 
+.nav a:hover {
+  color: darkgray;
+}
+
 .nav a.router-link-exact-active {
   color: #aa2a23;
   font-weight: bold;

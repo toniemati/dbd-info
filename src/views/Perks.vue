@@ -1,6 +1,6 @@
 <template>
   <div class="perks">
-    <input @input="handleInputChange" type="text" placeholder="search for perk">
+    <input @input="handleInputChange" type="text" placeholder="perk/survivor/killer">
 
     <div 
       v-if="filteredPerks.length"
@@ -41,7 +41,7 @@ const handleInputChange = (e) => {
   if (!value.length)
     return filteredPerks.value = perks.value;
 
-  filteredPerks.value = perks.value.filter(({ perk_name }) => perk_name.match(new RegExp(value, 'i')));
+  filteredPerks.value = perks.value.filter(({ perk_name, name }) => perk_name.match(new RegExp(value, 'i')) || name.match(new RegExp(value, 'i')));
 }
 
 </script>
@@ -80,13 +80,39 @@ const handleInputChange = (e) => {
 }
 
 .perks__list {
+  max-height: 70vh;
+
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: auto;
 
   gap: 1rem;
 
-  padding: 2rem 10rem;
+  margin: 2rem 10rem;
+
+  overflow-y: scroll;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #00000055;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #efefef;
+  cursor: pointer;
+  border-radius: 3rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
 }
 </style>
 
