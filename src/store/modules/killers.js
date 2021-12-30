@@ -10,8 +10,12 @@ export default {
   },
   actions: {
     setKillers: async ({ commit }) => {
-      const { data } = await axios.get('http://localhost:8080/killers');
-      commit('setKillers', data);
+      try {
+        const { data } = await axios.get('http://localhost:8080/killers');
+        commit('setKillers', data);
+      } catch (err) {
+        console.log('killers error:', err);
+      }
     }
   },
   mutations: {

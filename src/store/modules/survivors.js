@@ -10,8 +10,12 @@ export default {
   },
   actions: {
     setSurvivors: async ({ commit }) => {
-      const { data } = await axios.get('http://localhost:8080/survivors');
-      commit('setSurvivors', data);
+      try {
+        const { data } = await axios.get('http://localhost:8080/survivors');
+        commit('setSurvivors', data);
+      } catch (err) {
+        console.log('survivors error:', err);
+      }
     }
   },
   mutations: {
