@@ -5,7 +5,8 @@ export default {
     killers: []
   },
   getters: {
-    getKillers: (state) => state.killers
+    getKillers: (state) => state.killers,
+    getKillerByName: (state) => (payload) => state.killers.find(({ name }) => name.toLowerCase().replace(/\s|&/gi, '') === payload)
   },
   actions: {
     setKillers: async ({ commit }) => {

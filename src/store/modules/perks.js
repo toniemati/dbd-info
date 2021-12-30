@@ -6,7 +6,8 @@ export default {
   },
   getters: {
     getPerks: (state) => state.perks,
-    getPerkByName: (state) => (payload) => state.perks.find(({ perk_name }) => perk_name.toLowerCase().replace(/\s|&/gi, '') === payload)
+    getEnPerks: (state) => state.perks.filter(({ lang }) => lang === 'en'),
+    getPerkByName: (state) => (payload) => state.perks.find(({ perk_name }) => perk_name.toLowerCase().replace(/\s|&|'/giu, '').replace('â', 'a') === payload)
   },
   actions: {
     setPerks: async ({ commit }) => {

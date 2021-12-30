@@ -14,7 +14,7 @@
       />
     </div>
     
-    <div v-else>
+    <div class="perks__loading" v-else>
       loading data...
     </div>
   </div>
@@ -26,11 +26,11 @@ import { ref, computed, watch } from 'vue';
 import { useStore } from 'vuex';
 
 const store = useStore();
-const perks = computed(() => store.state.perks.perks);
+const perks = computed(() => store.getters.getEnPerks);
 const filteredPerks = ref(perks.value);
 
 //* Watching perks when fetch from api
-watch(perks, (curr, prev) => {
+watch(perks, (curr) => {
   filteredPerks.value = curr;
 });
 
@@ -43,7 +43,6 @@ const handleInputChange = (e) => {
 
   filteredPerks.value = perks.value.filter(({ perk_name, name }) => perk_name.match(new RegExp(value, 'i')) || name.match(new RegExp(value, 'i')));
 }
-
 </script>
 
 <style scoped>
@@ -91,6 +90,12 @@ const handleInputChange = (e) => {
   margin: 2rem 10rem;
 
   overflow-y: scroll;
+}
+
+.perks__loading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 5rem;
 }
 </style>
 

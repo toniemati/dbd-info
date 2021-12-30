@@ -1,5 +1,5 @@
 <template>
-  <div @click="handleClick" class="perkListItem">
+  <div @click="handleClick" class="killerListItem">
     <img :src="img" />
     <p>{{ name }}</p>
   </div>
@@ -12,19 +12,22 @@ const router = useRouter();
 const { name, img } = defineProps({ name: String, img: String });
 
 const handleClick = () => {
-  router.push({ name: 'PerkDetails', params: {
-      name: name.toLowerCase().replace(/\s|&|'/giu, '').replace('â', 'a')
+  router.push({ name: 'KillerDetails', params: {
+      name: name.toLowerCase().replace(/\s/gi, '')
     }
   });
 }
+
 </script>
 
 <style scoped>
-.perkListItem {
+.killerListItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  gap: 1rem;
 
   cursor: pointer;
   padding: 11%;
@@ -32,15 +35,15 @@ const handleClick = () => {
   transition: all 0.3s ease-in-out;
 }
 
-.perkListItem:hover {
+.killerListItem:hover {
   border: 1px solid #efefef;
 }
 
-.perkListItem img {
+.killerListItem img {
   width: 100%;
 }
 
-.perkListItem p {
+.killerListItem p {
   text-align: center;
 }
 </style>

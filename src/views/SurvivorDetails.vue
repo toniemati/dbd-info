@@ -19,6 +19,11 @@
           </div>
 
           <div class="survivorDetails__item">
+            <h3>Role</h3>
+            <p>{{ survivor.role }}</p>
+          </div>
+
+          <div class="survivorDetails__item">
             <h3>Difficulty</h3>
             <p>{{ survivor.difficulty }}</p>
           </div>
@@ -69,7 +74,7 @@
 <script setup>
 import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 
 const route = useRoute();
 const router = useRouter();
@@ -79,11 +84,10 @@ const survivor = computed(() => store.getters.getSurvivorByName(route.params.nam
 
 const handleSurvivorPerkClick = (perkName) => {
   router.push({ name: 'PerkDetails', params: {
-      name: perkName.toLowerCase()
+      name: perkName.toLowerCase().replace('â', 'a')
     }
   });
 }
-
 </script>
 
 <style scoped>

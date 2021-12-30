@@ -45,7 +45,7 @@
 <script setup>
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
-import { computed, watch } from 'vue';
+import { computed } from 'vue';
 
 const route = useRoute();
 const store = useStore();

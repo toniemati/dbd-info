@@ -17,7 +17,6 @@ const handleClick = () => {
     }
   });
 }
-
 </script>
 
 <style scoped>
