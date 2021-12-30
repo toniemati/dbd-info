@@ -97,5 +97,13 @@ const handleInputChange = (e) => {
   font-weight: bold;
   margin: 5rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .perks__list {
+    max-height: 75vh;
+    margin: 0rem 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 </style>
 

@@ -97,9 +97,23 @@ const perk = computed(() => store.getters.getPerkByName(route.params.name));
   margin-bottom: .33rem;
 }
 
-/* .perkDetails__infoContentItem p {} */
+.perkDetails__infoContentItem p {
+  margin-left: .5rem;
+}
 
 .perkDetails__noFinded {
   margin: 10rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .perkDetails {
+    margin: 0;
+  }
+
+  .perkDetails__info {
+    width: 100%;
+    margin: 0 1rem 2rem;
+    flex-direction: column;
+  }
 }
 </style>

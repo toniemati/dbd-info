@@ -162,4 +162,35 @@ const handleSurvivorPerkClick = (perkName) => {
 .survivorDetails__noFinded {
   margin: 10rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .survivorDetails {
+    margin: 0;
+  }
+
+  .survivorDetails__info {
+    width: 100%;
+    max-height: 90vh;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin: 0 1rem 2rem;
+  }
+
+  .survivorDetails__leftSide {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  .survivorDetails__leftSide img {
+    padding: 3rem;
+  }
+
+  .survivorDetails__leftSideInfo {
+    margin: 0;
+  }
+
+  .survivorDetails__rightSide {
+    margin: 0;
+  }
+}
 </style>

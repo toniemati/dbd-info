@@ -54,5 +54,13 @@ const killers = computed(() => store.getters.getKillers);
   font-weight: bold;
   margin: 5rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .killers__list {
+    max-height: 90vh;
+    margin: 0.5rem 1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 </style>
 

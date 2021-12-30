@@ -65,4 +65,10 @@
 .about__contentItem p a:hover {
   text-decoration: underline;
 }
+
+@media only screen and (max-width: 768px) {
+  .about {
+    margin: 5rem .5rem;
+  }  
+}
 </style>

@@ -22,4 +22,10 @@
   flex-direction: column;
   gap: 2rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .home {
+    margin: 5rem .5rem;
+  }  
+}
 </style>
