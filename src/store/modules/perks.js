@@ -12,11 +12,7 @@ export default {
   actions: {
     setPerks: async ({ commit }) => {
       try {
-        const { data } = await axios.get('http://localhost:8080/perks', {
-          headers: {
-            Accept: '*/*'
-          }
-        });
+        const { data } = await axios.get('http://localhost:8080/perks');
         commit('setPerks', data);
       } catch (err) {
         console.log('perks error:', err);
